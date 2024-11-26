@@ -6,7 +6,7 @@
 /*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 19:55:42 by tripham           #+#    #+#             */
-/*   Updated: 2024/11/25 20:38:19 by tripham          ###   ########.fr       */
+/*   Updated: 2024/11/26 21:10:15 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ char	*ft_strdup(char *s1)
 	s2 = malloc(sizeof(char) * (len + 1));
 	if (!s2)
 		return (NULL);
-	ft_memcpy(s2, s1, len);
+	while (i < len)
+	{
+		s2[i] = s1[i];
+		i++;
+	}
 	s2[i] = '\0';
 	return (s2);	
 }
@@ -43,9 +47,13 @@ size_t	ft_strlen(char *s1)
 void	*ft_memcpy(void *des, const void *src, size_t len)
 {
 	size_t	i;
+	char		*destination;
+	const char	*source;
 
 	i = 0;
-	if (!des && !src)
+	destination = (char *)des;
+	source = (const char *)src;
+	if (!destination && !source)
 		return (NULL);
 	if (des == src)
 		return (des);
@@ -53,7 +61,7 @@ void	*ft_memcpy(void *des, const void *src, size_t len)
 	{
 		while (i < len)
 		{
-			((unsigned char *)des)[i] = ((unsigned char *)src)[i];
+			destination[i] = source[i];
 			i++;
 		}
 	}
