@@ -6,7 +6,7 @@
 /*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 18:42:44 by tripham           #+#    #+#             */
-/*   Updated: 2024/11/26 21:16:38 by tripham          ###   ########.fr       */
+/*   Updated: 2024/11/30 21:26:10 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,4 +112,3 @@ char	*get_next_line(int fd)
 	ft_get_remainder(&big_buf);
 	return (line);
 }
-
