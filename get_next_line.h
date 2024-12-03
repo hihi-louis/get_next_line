@@ -6,7 +6,7 @@
 /*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 18:42:33 by tripham           #+#    #+#             */
-/*   Updated: 2024/11/26 21:24:16 by tripham          ###   ########.fr       */
+/*   Updated: 2024/12/02 20:57:34 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 420398
+#  define BUFFER_SIZE 42
 
 # endif
 

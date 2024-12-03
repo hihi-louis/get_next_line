@@ -1,34 +1,21 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/26 20:35:47 by tripham           #+#    #+#             */
-/*   Updated: 2024/11/26 21:23:10 by tripham          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "get_next_line.h"
 #include <fcntl.h>
 #include <stdio.h>
-#include <unistd.h>
-
-int main(void)
+int main(int argc, char **argv)
 {
-	int fd;
-	char *next_line;
-
-	fd = open("text1.txt", O_RDONLY);
-	while (1)
+	char *line;
+	
+	for(int i = 1; i < argc; i++)
 	{
-		next_line = get_next_line(fd);
-		if(!next_line)
-			break;
-		printf("%s", next_line);
-		free(next_line);
+		int fd = open(argv[i], O_RDONLY);
+		printf("READING FILE %s\n", argv[i]);
+		while ((line = get_next_line(fd)) != NULL)
+		{
+			printf("%s", line);
+			free(line);
+		}
+		close(fd);
+		printf("End OF File\n");
 	}
-	close(fd);
-	return (0);
+	return 0;
 }

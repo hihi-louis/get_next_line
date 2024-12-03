@@ -14,7 +14,7 @@
 
 static char	*ft_free(char **s)
 {
-	if(*s)
+	if (*s)
 	{
 		free(*s);
 		*s = NULL;
@@ -43,7 +43,7 @@ static char	*ft_read(int fd, char *big_buf, int been_read, char *small_buf)
 			return (ft_free(&tmp));
 		}
 		if (ft_strchr(big_buf, '\n'))
-			break;
+			break ;
 	}
 	free(small_buf);
 	return (big_buf);
@@ -79,7 +79,7 @@ static void	ft_get_remainder(char **big_buf)
 		i++;
 	if ((*big_buf)[i] == '\n')
 		i++;
-	if(!(*big_buf + i))
+	if (!(*big_buf + i))
 	{
 		ft_free(big_buf);
 		return ;
@@ -94,10 +94,10 @@ char	*get_next_line(int fd)
 	static char	*big_buf;
 	char		*small_buf;
 	char		*line;
-	int				been_read;
+	int			been_read;
 
-	line =	NULL;
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, NULL, 0) < 0)
+	line = NULL;
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (ft_free(&big_buf));
 	been_read = 1;
 	small_buf = malloc((BUFFER_SIZE + 1) * sizeof(char));

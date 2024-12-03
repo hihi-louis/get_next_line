@@ -31,7 +31,7 @@ char	*ft_strdup(char *s1)
 		i++;
 	}
 	s2[i] = '\0';
-	return (s2);	
+	return (s2);
 }
 
 size_t	ft_strlen(char *s1)
@@ -46,7 +46,7 @@ size_t	ft_strlen(char *s1)
 
 void	*ft_memcpy(void *des, const void *src, size_t len)
 {
-	size_t	i;
+	size_t		i;
 	char		*destination;
 	const char	*source;
 
@@ -91,6 +91,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	free (s1);
 	return (res);
 }
+
 char	*ft_strchr(const char *s, int c)
 {
 	int		i;
